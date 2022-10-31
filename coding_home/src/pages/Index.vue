@@ -83,11 +83,11 @@
 
         </div>
         <!-- 编程工具 -->
-        <div id="codeToolModule">
+        <div id="codeToolModule" name='codeToolModule'>
             <CodeToolModule></CodeToolModule>
         </div>
         <!-- 课程模块 -->
-        <div id="courseModule">
+        <div id="courseModule" name="courseModule">
             <CourseModule></CourseModule>
         </div>
         <!-- 底部 -->
@@ -453,6 +453,10 @@ broadcastTextChange()
         cursor: pointer;
         line-height: 50px;
 
+    }
+
+    .pagination-item:hover {
+        color: #009cff;
     }
 
     .act-pagination-item {

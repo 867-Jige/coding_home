@@ -5,10 +5,10 @@
             'bar-content': true, 'bar-content-show': barContentShow
         }">
             <div class="bar-nav-box">
-                <a :class="{ 'bar-nav-item': true, 'bar-nav-item-act': index == barNavIndex }" href="/"
+                <a :class="{ 'bar-nav-item': true, 'bar-nav-item-act': index == barNavIndex }" :href="item.location"
                     @click="barNavIndexChange(index)" v-for="(item, index) in barNavList" :key="index">
                     <i :class="['bar-nav-icon', `icon-${index + 1}`]"></i>
-                    <span class="bar-nav-text">{{ item }}</span>
+                    <span class="bar-nav-text">{{ item.name }}</span>
                 </a>
                 <a class="bar-nav-item" href="javascript:void(0)" @click="gotoTop">
                     <i class="bar-nav-icon icon-7"></i>
@@ -31,7 +31,22 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 const barNavList = [
-    '实验室', '学好课', '好作品', '资讯', '校园', '合作'
+    {
+        name: '实验室',
+        location: '#codeToolModule'
+    },
+    {
+        name: '学好课',
+        location: "#courseModule"
+    }, {
+        name: '好作品',
+    }, {
+        name: '资讯',
+    }, {
+        name: '校园',
+    }, {
+        name: '合作'
+    }
 ]
 let barNavIndex = ref(0)
 const barNavIndexChange = (index) => {
